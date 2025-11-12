@@ -21,6 +21,9 @@
             <NuxtLink to="/">
                 <li>Поддержка</li>
             </NuxtLink>
+            <NuxtLink to="/documents">
+                <li>Документы</li>
+            </NuxtLink>
         </ul>
 
         <div class="navbar-actions">
