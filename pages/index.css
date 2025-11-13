@@ -341,9 +341,20 @@
     background: linear-gradient(179.1deg, #FFFFFF 33.46%, #2C6BF1 362.2%);
 
 }
+.hop-security-img {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    z-index: -1;
+    height: 800px;
+}
+.hop-security-img:nth-of-type(2) {
+    bottom: 0;
+    left: 75%;
+}
 @media (max-width:1025px) {
     .navbar-list a{
-        font-size: 16px;
+        font-size: 18px;
     }
     
 }

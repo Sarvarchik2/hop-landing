@@ -17,32 +17,32 @@
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
             <h2>О сервисе <span>Hop Taxi</span></h2>
             <div class="hop-services-wrapper">
-                 <div class="hop-services-item">
+                <div class="hop-services-item">
                     <h3>
-                        <span>Быстрый поиск</span><br/>
+                        <span>Быстрый поиск</span><br />
                         ближайшего водителя
                     </h3>
                     <img src="@/assets/services/3.svg" alt="">
                 </div>
-                 <div class="hop-services-item">
+                <div class="hop-services-item">
                     <h3>
-                        <span>Удобная оплата</span><br/>
+                        <span>Удобная оплата</span><br />
                         картой или наличными
                     </h3>
                     <img src="@/assets/services/4.svg" alt="">
                 </div>
-               
-               
+
+
                 <div class="hop-services-item">
                     <h3>
-                        <span>Безопасность</span><br/>
+                        <span>Безопасность</span><br />
                         на каждом этапе
                     </h3>
                     <img src="@/assets/services/1.svg" alt="">
                 </div>
-                   <div class="hop-services-item">
+                <div class="hop-services-item">
                     <h3>
-                        <span>Мгновенные</span><br/>
+                        <span>Мгновенные</span><br />
                         уведомления и трекинг
                     </h3>
                     <img src="@/assets/services/2.svg" alt="">
@@ -51,31 +51,31 @@
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
 
         </section>
-        
-   
+
+
         <section class="hop-passangers">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
             <h2>Для <span>пассажиров</span></h2>
             <div class="passangers-grid">
                 <div class="passangers-item">
-                    <h3><span>Умное определение</span><br/> маршрута</h3>
+                    <h3><span>Умное определение</span><br /> маршрута</h3>
                     <img src="@/assets/p1.svg" alt="">
                 </div>
                 <div class="passangers-item">
-                    <h3><span>Прозрачная цена</span><br/> без скрытых комиссий</h3>
+                    <h3><span>Прозрачная цена</span><br /> без скрытых комиссий</h3>
                     <img src="@/assets/p2.svg" alt="">
                 </div>
                 <div class="passangers-item">
-                    <h3><span>Мгновенные уведомления</span><br/> о водителе</h3>
+                    <h3><span>Мгновенные уведомления</span><br /> о водителе</h3>
                     <img src="@/assets/p3.svg" alt="">
                 </div>
             </div>
-            
+
             <NuxtLink to="/" class="btn-primary passangers-cta">Начать поездку</NuxtLink>
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
-        
+
         </section>
-         <section class="hop-passangers">
+        <section class="hop-passangers">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
             <h2>Для <span>водилетей</span></h2>
             <p>Зарабатывай с Taxi Bot, работай когда удобно.</p>
@@ -95,12 +95,13 @@
             </div>
             <NuxtLink to="/" class="btn-primary passangers-cta">Стать водителем</NuxtLink>
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
-        
+
         </section>
-             <section class="hop-security">
+        <section class="hop-security">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
             <h2>Безопасность и <span>надёжность</span></h2>
             <div class="security-grid">
+                <img class="hop-security-img" src="@/assets/sp2.svg" alt="">
                 <div class="sec-item sec-verified">
                     <h3><span>Проверенные</span> водители</h3>
                     <img src="@/assets/s1.svg" alt="verified placeholder">
@@ -117,6 +118,8 @@
                     <h3><span>Безопасные</span> онлайн-платежи</h3>
                     <img src="@/assets/s4.svg" alt="payments placeholder">
                 </div>
+                <img class="hop-security-img" src="@/assets/sp1.svg" alt="">
+
             </div>
 
         </section>

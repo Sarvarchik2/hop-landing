@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     background: linear-gradient(186.94deg, #FFFFFF -143.43%, #2C6BF1 114.1%);
     border-radius: 50px;
     display: flex;
@@ -8,8 +8,12 @@
     height: 72px;
     position: relative;
 }
-.navbar.open{box-shadow: 0 8px 30px -12px rgba(44,107,241,.4);} 
-.navbar-list{
+
+.navbar.open {
+    box-shadow: 0 8px 30px -12px rgba(44, 107, 241, .4);
+}
+
+.navbar-list {
     display: flex;
     gap: 40px;
     list-style: none;
@@ -17,60 +21,111 @@
     padding: 0;
 
 }
-.navbar-list a{
+
+.navbar-list a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     font-size: 18px;
 }
-.navbar-actions{
+
+.navbar-actions {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-.logo{
+.logo {
     height: 40px;
 }
-.logo img{
+
+.logo img {
     height: 100%;
 }
-.lang-select{
+
+.lang-select {
     appearance: none;
     border: none;
     background: #fff;
-    color:#2C6BF1;
-    font-weight:600;
-    font-size:16px;
-    padding:8px 14px;
+    color: #2C6BF1;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 14px;
     border-radius: 24px;
-    box-shadow: 0 10px 20px -10px rgba(44,107,241,.5);
+    box-shadow: 0 10px 20px -10px rgba(44, 107, 241, .5);
 }
 
 /* Burger for small screens */
-.burger{
-    display:none;
+.burger {
+    flex-direction: column;
+    display: none;
     width: 42px;
     height: 42px;
     border-radius: 50%;
     border: 2px solid #fff;
-    background: rgba(255,255,255,.25);
+    background: rgba(255, 255, 255, .25);
     align-items: center;
     justify-content: center;
-    gap:4px;
+    gap: 8px;
+    /* больше интервалов между полосками как в примере */
     transition: background .2s ease, transform .2s ease;
     position: relative;
 }
-.burger:hover{background: rgba(255,255,255,.35)}
-.burger span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;transition: transform .25s ease, opacity .2s ease}
-.navbar.open .burger span:nth-child(1){transform: translateY(6px) rotate(45deg);} 
-.navbar.open .burger span:nth-child(2){opacity:0}
-.navbar.open .burger span:nth-child(3){transform: translateY(-6px) rotate(-45deg);} 
 
-@media (max-width: 768px){
-    .burger{display:flex}
-    .navbar{gap:10px}
-    .navbar-list{
+.burger:hover {
+    background: rgba(255, 255, 255, .35)
+}
+
+.burger span {
+    display: block;
+    width: 24px;
+    /* базовая ширина */
+    height: 4px;
+    /* более толстые полоски */
+    background: #fff;
+    /* белые под синий фон; при желании поменяем на #000 */
+    border-radius: 9999px;
+    /* скругленные концы как в примере */
+    transition: transform .25s ease, opacity .2s ease, width .2s ease;
+}
+
+/* разная длина полосок */
+.burger span:nth-child(1) {
+    width: 22px;
+}
+
+.burger span:nth-child(2) {
+    width: 30px;
+}
+
+.burger span:nth-child(3) {
+    width: 18px;
+}
+
+.navbar.open .burger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    width: 24px;
+}
+
+.navbar.open .burger span:nth-child(2) {
+    opacity: 0
+}
+
+.navbar.open .burger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 24px;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex
+    }
+
+    .navbar {
+        gap: 10px
+    }
+
+    .navbar-list {
         position: absolute;
         top: 84px;
         left: 0;
@@ -81,12 +136,17 @@
         padding: 16px;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 30.navbar-listpx;
         z-index: 10;
         transform: translateY(-8px);
         opacity: 0;
         pointer-events: none;
         transition: transform .25s ease, opacity .25s ease;
     }
-    .navbar.open .navbar-list{opacity:1; transform: translateY(0); pointer-events: auto;}
+
+    .navbar.open .navbar-list {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
 }
