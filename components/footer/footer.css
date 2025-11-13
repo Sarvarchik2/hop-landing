@@ -1,0 +1,147 @@
+.hop-footer {
+    margin-top: 60px;
+    color: #1f3b8f;
+    position: relative;
+}
+
+.hop-footer::after {
+    content: "";
+    display: block;
+    clear: both;
+
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    z-index: -1;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #e6efff 100%);
+
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 50px;
+}
+
+.footer-brand {
+    text-align: center;
+    color: #2a66d9;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-size: clamp(18px, 2.4vw, 28px);
+    margin: 0 0 24px;
+}
+
+.footer-brand .brand-car {
+    display: inline-block;
+    transform: translateY(2px);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 28px 40px;
+    align-items: start;
+}
+
+.f-col {
+    color: #2a66d9;
+}
+
+.f-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.f-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.f-list a {
+    color: #2a66d9;
+    text-decoration: none;
+}
+
+.f-list a:hover {
+    text-decoration: underline;
+}
+
+/* Telegram block */
+.f-tele-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tg-icon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+
+.tg-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.tg-handle {
+    color: #2a66d9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.tg-handle:hover {
+    text-decoration: underline;
+}
+
+/* Badges */
+.f-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-self: end;
+}
+
+.f-badges img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.f-badges .store-badge:nth-child(1) img {
+    height: 40px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .f-badges {
+        justify-self: start;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    .footer-inner {
+        padding: 32px 16px 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .f-badges {
+        align-items: flex-start;
+    }
+}

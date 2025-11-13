@@ -7,16 +7,17 @@
 
 
         <ul class="navbar-list">
-            <NuxtLink to="/" @click="menuOpen = false"><li>О сервисе</li></NuxtLink>
-            <NuxtLink to="/" @click="menuOpen = false"><li>Для пассажиров</li></NuxtLink>
-            <NuxtLink to="/" @click="menuOpen = false"><li>Для водителей</li></NuxtLink>
-            <NuxtLink to="/" @click="menuOpen = false"><li>Поддержка</li></NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>{{ t('nav.about') }}</li></NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>{{ t('nav.passengers') }}</li></NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>{{ t('nav.drivers') }}</li></NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>{{ t('nav.support') }}</li></NuxtLink>
         </ul>
 
         <div class="navbar-actions">
           
             <div class="navbar-lang">
-                <select v-model="lang" class="lang-select" aria-label="Language">
+                <select v-model="localeProxy" class="lang-select" aria-label="Language">
+                    <option value="uz">UZ</option>
                     <option value="ru">RU</option>
                     <option value="en">EN</option>
                 </select>
@@ -29,13 +30,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-const menuOpen = ref(false)
-const lang = ref<'ru' | 'en'>('ru')
+import { ref, computed } from 'vue'
+import { useI18n } from '@/composables/useI18n'
 
-// Stub: you can replace with real i18n later
-watch(lang, (val) => {
-    document.documentElement.setAttribute('lang', val)
+const menuOpen = ref(false)
+const { locale, setLocale, t } = useI18n()
+
+const localeProxy = computed({
+    get: () => locale.value,
+    set: (val) => setLocale(val)
 })
 </script>
 

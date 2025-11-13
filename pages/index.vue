@@ -1,33 +1,37 @@
 <template>
     <div class="hop">
         <div class="hop-header">
-            <h1><span>Taxi Bot —</span> ваш надёжный партнёр в поездках</h1>
-            <p><span>Быстро, безопасно и удобно — </span>всё, что нужно для комфортной поездки</p>
+                <img class="decor-krug krug-sec-left" src="@/assets/krug.svg" alt="">
+            <img class="decor-krug krug-sec-right" src="@/assets/krug.svg" alt="">
+            <h1><span>{{ t('hero.title.prefix') }}</span>{{ t('hero.title.suffix') }}</h1>
+            <p><span>{{ t('hero.subtitle.bold') }}</span>{{ t('hero.subtitle.tail') }}</p>
             <div class="hop-header-btns">
                 <NuxtLink to="/" class="btn-primary">
-                    Стать пассажиром
+                    {{ t('hero.cta.primary') }}
                 </NuxtLink>
                 <NuxtLink to="/" class="btn-secondary">
-                    Стать водителем
+                    {{ t('hero.cta.secondary') }}
                 </NuxtLink>
             </div>
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
         </div>
         <section class="hop-service">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
-            <h2>О сервисе <span>Hop Taxi</span></h2>
+            <img class="decor-krug krug-service-left" src="@/assets/krug.svg" alt="">
+            <img class="decor-krug krug-service-right" src="@/assets/krug.svg" alt="">
+            <h2>{{ t('service.about') }} <span>Hop Taxi</span></h2>
             <div class="hop-services-wrapper">
                 <div class="hop-services-item">
                     <h3>
-                        <span>Быстрый поиск</span><br />
-                        ближайшего водителя
+                        <span>{{ t('service.c1.l1') }}</span><br />
+                        {{ t('service.c1.l2') }}
                     </h3>
                     <img src="@/assets/services/3.svg" alt="">
                 </div>
                 <div class="hop-services-item">
                     <h3>
-                        <span>Удобная оплата</span><br />
-                        картой или наличными
+                        <span>{{ t('service.c2.l1') }}</span><br />
+                        {{ t('service.c2.l2') }}
                     </h3>
                     <img src="@/assets/services/4.svg" alt="">
                 </div>
@@ -35,15 +39,15 @@
 
                 <div class="hop-services-item">
                     <h3>
-                        <span>Безопасность</span><br />
-                        на каждом этапе
+                        <span>{{ t('service.c3.l1') }}</span><br />
+                        {{ t('service.c3.l2') }}
                     </h3>
                     <img src="@/assets/services/1.svg" alt="">
                 </div>
                 <div class="hop-services-item">
                     <h3>
-                        <span>Мгновенные</span><br />
-                        уведомления и трекинг
+                        <span>{{ t('service.c4.l1') }}</span><br />
+                        {{ t('service.c4.l2') }}
                     </h3>
                     <img src="@/assets/services/2.svg" alt="">
                 </div>
@@ -55,67 +59,73 @@
 
         <section class="hop-passangers">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
-            <h2>Для <span>пассажиров</span></h2>
+            <img class="decor-krug krug-pass-left" src="@/assets/krug.svg" alt="">
+            <img class="decor-krug krug-pass-right" src="@/assets/krug.svg" alt="">
+            <h2>{{ t('passengers.title') }}</h2>
             <div class="passangers-grid">
                 <div class="passangers-item">
-                    <h3><span>Умное определение</span><br /> маршрута</h3>
+                    <h3><span>{{ t('passengers.c1.l1') }}</span><br /> {{ t('passengers.c1.l2') }}</h3>
                     <img src="@/assets/p1.svg" alt="">
                 </div>
                 <div class="passangers-item">
-                    <h3><span>Прозрачная цена</span><br /> без скрытых комиссий</h3>
+                    <h3><span>{{ t('passengers.c2.l1') }}</span><br /> {{ t('passengers.c2.l2') }}</h3>
                     <img src="@/assets/p2.svg" alt="">
                 </div>
                 <div class="passangers-item">
-                    <h3><span>Мгновенные уведомления</span><br /> о водителе</h3>
+                    <h3><span>{{ t('passengers.c3.l1') }}</span><br /> {{ t('passengers.c3.l2') }}</h3>
                     <img src="@/assets/p3.svg" alt="">
                 </div>
             </div>
 
-            <NuxtLink to="/" class="btn-primary passangers-cta">Начать поездку</NuxtLink>
+            <NuxtLink to="/" class="btn-primary passangers-cta">{{ t('passengers.cta') }}</NuxtLink>
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
 
         </section>
         <section class="hop-passangers">
+                <img class="decor-krug krug-sec-left" src="@/assets/krug.svg" alt="">
+            <img class="decor-krug krug-sec-right" src="@/assets/krug.svg" alt="">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
-            <h2>Для <span>водилетей</span></h2>
-            <p>Зарабатывай с Taxi Bot, работай когда удобно.</p>
+            <h2>{{ t('drivers.title') }}</h2>
+            <p>{{ t('drivers.subtitle') }}</p>
             <div class="passangers-grid">
                 <div class="passangers-item">
-                    <h3>Зарегистрируйся</h3>
+                    <h3>{{ t('drivers.c1') }}</h3>
                     <img src="@/assets/v1.svg" alt="">
                 </div>
                 <div class="passangers-item">
-                    <h3>Пройди проверку</h3>
+                    <h3>{{ t('drivers.c2') }}</h3>
                     <img src="@/assets/v2.svg" alt="">
                 </div>
                 <div class="passangers-item">
-                    <h3>Принимай заказы</h3>
+                    <h3>{{ t('drivers.c3') }}</h3>
                     <img src="@/assets/v3.svg" alt="">
                 </div>
             </div>
-            <NuxtLink to="/" class="btn-primary passangers-cta">Стать водителем</NuxtLink>
+            <NuxtLink to="/" class="btn-primary passangers-cta">{{ t('drivers.cta') }}</NuxtLink>
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
 
         </section>
         <section class="hop-security">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
-            <h2>Безопасность и <span>надёжность</span></h2>
+            <h2>{{ t('security.title') }}</h2>
+            <img class="decor-krug krug-sec-left" src="@/assets/krug.svg" alt="">
+            <img class="decor-krug krug-sec-right" src="@/assets/krug.svg" alt="">
             <div class="security-grid">
                 <img class="hop-security-img" src="@/assets/sp2.svg" alt="">
                 <div class="sec-item sec-verified">
-                    <h3><span>Проверенные</span> водители</h3>
+                    <h3><span>{{ t('security.c1.l1') }}</span> {{ t('security.c1.l2') }}</h3>
                     <img src="@/assets/s1.svg" alt="verified placeholder">
                 </div>
                 <div class="sec-item sec-support">
-                    <h3><span>24/7</span> поддержка</h3>
+                    <h3><span>{{ t('security.c2.l1') }}</span> {{ t('security.c2.l2') }}</h3>
                     <img src="@/assets/s2.svg" alt="support placeholder">
                 </div>
                 <div class="sec-item sec-geo">
-                    <h3><span>Геолокация</span> в реальном времени</h3>
+                    <h3><span>{{ t('security.c3.l1') }}</span> {{ t('security.c3.l2') }}</h3>
                     <img src="@/assets/s3.svg" alt="geo placeholder">
                 </div>
                 <div class="sec-item sec-payments">
-                    <h3><span>Безопасные</span> онлайн-платежи</h3>
+                    <h3><span>{{ t('security.c4.l1') }}</span> {{ t('security.c4.l2') }}</h3>
                     <img src="@/assets/s4.svg" alt="payments placeholder">
                 </div>
                 <img class="hop-security-img" src="@/assets/sp1.svg" alt="">
@@ -125,6 +135,11 @@
         </section>
     </div>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from '@/composables/useI18n'
+const { t } = useI18n()
+</script>
 
 <style>
 @import './index.css';
