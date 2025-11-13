@@ -7,21 +7,10 @@
 
 
         <ul class="navbar-list">
-            <NuxtLink to="/">
-                <li>О сервисе</li>
-            </NuxtLink>
-            <NuxtLink to="/">
-                <li>Для пассажиров</li>
-            </NuxtLink>
-            <NuxtLink to="/">
-                <li>Для водителей</li>
-            </NuxtLink>
-            <NuxtLink to="/">
-                <li>Поддержка</li>
-            </NuxtLink>
-            <NuxtLink to="/documents">
-                <li>Документы</li>
-            </NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>О сервисе</li></NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>Для пассажиров</li></NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>Для водителей</li></NuxtLink>
+            <NuxtLink to="/" @click="menuOpen = false"><li>Поддержка</li></NuxtLink>
         </ul>
 
         <div class="navbar-actions">

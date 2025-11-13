@@ -6,6 +6,7 @@
     padding: 0px 20px;
     justify-content: space-between;
     height: 72px;
+    position: relative;
 }
 .navbar.open{box-shadow: 0 8px 30px -12px rgba(44,107,241,.4);} 
 .navbar-list{
@@ -43,6 +44,7 @@
     font-size:16px;
     padding:8px 14px;
     border-radius: 24px;
+    box-shadow: 0 10px 20px -10px rgba(44,107,241,.5);
 }
 
 /* Burger for small screens */
@@ -51,13 +53,19 @@
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 0;
-    background: rgba(255,255,255,.3);
+    border: 2px solid #fff;
+    background: rgba(255,255,255,.25);
     align-items: center;
     justify-content: center;
     gap:4px;
+    transition: background .2s ease, transform .2s ease;
+    position: relative;
 }
-.burger span{display:block;width:18px;height:2px;background:#fff;border-radius:2px}
+.burger:hover{background: rgba(255,255,255,.35)}
+.burger span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;transition: transform .25s ease, opacity .2s ease}
+.navbar.open .burger span:nth-child(1){transform: translateY(6px) rotate(45deg);} 
+.navbar.open .burger span:nth-child(2){opacity:0}
+.navbar.open .burger span:nth-child(3){transform: translateY(-6px) rotate(-45deg);} 
 
 @media (max-width: 768px){
     .burger{display:flex}
@@ -71,10 +79,14 @@
         border-radius: 20px;
         margin: 0 10px;
         padding: 16px;
-        display: none;
+        display: flex;
         flex-direction: column;
         gap: 16px;
         z-index: 10;
+        transform: translateY(-8px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .25s ease, opacity .25s ease;
     }
-    .navbar.open .navbar-list{display:flex}
+    .navbar.open .navbar-list{opacity:1; transform: translateY(0); pointer-events: auto;}
 }
