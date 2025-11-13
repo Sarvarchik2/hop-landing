@@ -4,9 +4,7 @@
             <img src="@/assets/logo.svg" alt="Hop Taxi logo">
         </div>
 
-        <button class="burger" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
+
 
         <ul class="navbar-list">
             <NuxtLink to="/">
@@ -27,12 +25,16 @@
         </ul>
 
         <div class="navbar-actions">
+          
             <div class="navbar-lang">
                 <select v-model="lang" class="lang-select" aria-label="Language">
                     <option value="ru">RU</option>
                     <option value="en">EN</option>
                 </select>
             </div>
+              <button class="burger" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 </template>
@@ -44,7 +46,7 @@ const lang = ref<'ru' | 'en'>('ru')
 
 // Stub: you can replace with real i18n later
 watch(lang, (val) => {
-  document.documentElement.setAttribute('lang', val)
+    document.documentElement.setAttribute('lang', val)
 })
 </script>
 

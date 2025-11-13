@@ -93,7 +93,7 @@
                     <img src="@/assets/v3.svg" alt="">
                 </div>
             </div>
-            <NuxtLink to="/" class="btn-primary passangers-cta">Стать водитлемyfl</NuxtLink>
+            <NuxtLink to="/" class="btn-primary passangers-cta">Стать водителем</NuxtLink>
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
         
         </section>
@@ -118,7 +118,6 @@
                     <img src="@/assets/s4.svg" alt="payments placeholder">
                 </div>
             </div>
-            <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
 
         </section>
     </div>
