@@ -1,7 +1,7 @@
 <template>
   <div class="hop-wrapper">
     <div v-if="showIntro" class="intro-overlay">
-      <img class="intro-logo" src="@/assets/logo.svg" alt="Hop Taxi" />
+      <img class="intro-logo" src="@/assets/logob.svg" alt="Hop Taxi" />
     </div>
     <Navbar />
     <NuxtRouteAnnouncer />

@@ -3,8 +3,8 @@
         <img class="hop-img-1" src="@/assets/arrow/1.svg" alt="arrow decoration">
         <img class="hop-img-2" src="@/assets/arrow/2.svg" alt="arrow decoration">
         <div id="hero" class="hop-header">
-                <img class="decor-krug krug-sec-left" src="@/assets/krug.svg" alt="">
-            <img class="decor-krug krug-sec-right" src="@/assets/krug.svg" alt="">
+                <!-- <img class="decor-krug krug-sec-left" src="@/assets/krug.svg" alt=""> -->
+            <!-- <img class="decor-krug krug-sec-right" src="@/assets/krug.svg" alt=""> -->
             <h1 v-aos="'fade-up'"><span>{{ t('hero.title.prefix') }}</span>{{ t('hero.title.suffix') }}</h1>
             <p v-aos="{animation:'fade-up', delay:100}"><span>{{ t('hero.subtitle.bold') }}</span>{{ t('hero.subtitle.tail') }}</p>
             <div class="hop-header-btns" v-aos="{animation:'zoom-in', delay:200}">
