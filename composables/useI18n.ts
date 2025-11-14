@@ -194,7 +194,7 @@ const messages: Record<Locale, Record<string, string>> = {
 }
 
 function detectInitialLocale(): Locale {
-  if (typeof localStorage !== 'undefined') {
+  if (typeof localStorage !== 'undefined' && localStorage && typeof localStorage.getItem === 'function') {
     const stored = localStorage.getItem(STORAGE_KEY) as Locale | null
     if (stored && SUPPORTED.includes(stored)) return stored
   }
