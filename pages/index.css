@@ -2,8 +2,52 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
-
+.hop-img-2{
+    position: absolute;
+    top: 200px;
+    left: -20px;
+    width: 110%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+    opacity: 0.8;
+}
+.hop-img-3{
+    position: absolute;
+    top: 100px;
+    left: -20px;
+    width: 110%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    opacity: 0.8;
+}
+.hop-img-4{
+    position: absolute;
+    top: 390px;
+    right: -20px;
+    width: 110%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    opacity: 0.8;
+}
+.hop-img-1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+    opacity: 0.8;
+}
 .hop-header {
     width: 100%;
     height: 89vh;
@@ -218,6 +262,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    z-index: 2;
 }
 
 .passangers-item h3 {

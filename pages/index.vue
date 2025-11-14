@@ -1,5 +1,7 @@
 <template>
     <div class="hop">
+        <img class="hop-img-1" src="@/assets/arrow/1.svg" alt="arrow decoration">
+        <img class="hop-img-2" src="@/assets/arrow/2.svg" alt="arrow decoration">
         <div id="hero" class="hop-header">
                 <img class="decor-krug krug-sec-left" src="@/assets/krug.svg" alt="">
             <img class="decor-krug krug-sec-right" src="@/assets/krug.svg" alt="">
@@ -16,6 +18,8 @@
             <img class="hop-header-img" src="@/assets/header-bottom.svg" alt="hop-taxi">
         </div>
         <section id="about" class="hop-service">
+        <img class="hop-img-3" src="@/assets/arrow/3.svg" alt="arrow decoration">
+
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
             <img class="decor-krug krug-service-left" src="@/assets/krug.svg" alt="">
             <img class="decor-krug krug-service-right" src="@/assets/krug.svg" alt="">
@@ -58,6 +62,8 @@
 
 
         <section id="passengers" class="hop-passangers">
+        <img class="hop-img-4" src="@/assets/arrow/4.svg" alt="arrow decoration">
+
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
             <img class="decor-krug krug-pass-left" src="@/assets/krug.svg" alt="">
             <img class="decor-krug krug-pass-right" src="@/assets/krug.svg" alt="">
@@ -82,6 +88,8 @@
 
         </section>
         <section id="drivers" class="hop-passangers">
+        <img class="hop-img-4" src="@/assets/arrow/4.svg" alt="arrow decoration">
+
                 <img class="decor-krug krug-sec-left" src="@/assets/krug.svg" alt="">
             <img class="decor-krug krug-sec-right" src="@/assets/krug.svg" alt="">
             <img class="hop-service-img" src="@/assets/service-bg.svg" alt="">
