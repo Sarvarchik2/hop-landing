@@ -29,6 +29,10 @@
     font-size: 18px;
 }
 
+/* enhanced link styling (used in mobile dropdown too) */
+.nav-link{ display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:18px; }
+.nav-link .nav-ico{ display:none; width:20px; height:20px; color:inherit; opacity:.95; }
+
 .navbar-actions {
     display: flex;
     gap: 20px;
@@ -59,52 +63,51 @@
 .burger {
     flex-direction: column;
     display: none;
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    border: 2px solid #fff;
-    background: rgba(255, 255, 255, .25);
+    border: none;
+    background: #fff;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     /* больше интервалов между полосками как в примере */
     transition: background .2s ease, transform .2s ease;
     position: relative;
+    box-shadow: 0 12px 30px -12px rgba(44, 107, 241, .45);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .burger:hover {
-    background: rgba(255, 255, 255, .35)
+    transform: translateY(-1px)
+}
+
+.burger:focus,
+.burger:focus-visible,
+.burger:active{
+    outline: none;
+    box-shadow: 0 12px 30px -12px rgba(44, 107, 241, .45);
 }
 
 .burger span {
     display: block;
-    width: 24px;
-    /* базовая ширина */
-    height: 4px;
-    /* более толстые полоски */
-    background: #fff;
-    /* белые под синий фон; при желании поменяем на #000 */
+    width: 22px;
+    height: 3px;
+    background: #2C6BF1;
     border-radius: 9999px;
     /* скругленные концы как в примере */
     transition: transform .25s ease, opacity .2s ease, width .2s ease;
 }
 
 /* разная длина полосок */
-.burger span:nth-child(1) {
-    width: 22px;
-}
-
-.burger span:nth-child(2) {
-    width: 30px;
-}
-
-.burger span:nth-child(3) {
-    width: 18px;
-}
+.burger span:nth-child(1),
+.burger span:nth-child(2),
+.burger span:nth-child(3) { width: 22px; }
 
 .navbar.open .burger span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-    width: 24px;
+    transform: translateY(9px) rotate(45deg);
+    width: 22px;
 }
 
 .navbar.open .burger span:nth-child(2) {
@@ -112,8 +115,8 @@
 }
 
 .navbar.open .burger span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-    width: 24px;
+    transform: translateY(-9px) rotate(-45deg);
+    width: 22px;
 }
 
 @media (max-width: 768px) {
@@ -128,25 +131,45 @@
     .navbar-list {
         position: absolute;
         top: 84px;
-        left: 0;
-        right: 0;
-        background: linear-gradient(186.94deg, #FFFFFF -143.43%, #2C6BF1 114.1%);
-        border-radius: 20px;
-        margin: 0 10px;
-        padding: 16px;
+        right: 6px;
+        width: min(84vw, 320px);
+        background: #fff;
+        border-radius: 22px;
+        padding: 12px;
         display: flex;
         flex-direction: column;
-        gap: 30.navbar-listpx;
-        z-index: 10;
-        transform: translateY(-8px);
+        gap: 6px;
+        z-index: 20;
+        transform: translateY(-6px) scale(.98);
         opacity: 0;
         pointer-events: none;
+        box-shadow: 0 24px 40px -18px rgba(44, 107, 241, .45), 0 2px 10px rgba(0,0,0,.06);
         transition: transform .25s ease, opacity .25s ease;
     }
 
     .navbar.open .navbar-list {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         pointer-events: auto;
     }
+
+    .nav-link{ color:#2C6BF1; font-size:16px; font-weight:600; padding:12px 12px; border-radius:16px; }
+    .nav-link .nav-ico{ display:inline-flex; color:#2C6BF1; opacity:1; }
+    .nav-link.muted{ color:#9aaee8; }
+    .nav-link.muted .nav-ico{ color:#c5d2fb; }
+    .nav-link:active{ background: rgba(44,107,241,.08); }
+
+    /* First item as primary: white text on blue pill */
+    .navbar-list li:first-child .nav-link{
+        background: linear-gradient(186.94deg, #5EA0FF -20%, #2C6BF1 114.1%);
+        color:#fff;
+        box-shadow: 0 16px 34px -18px rgba(44,107,241,.5);
+    }
+    .navbar-list li:first-child .nav-link .nav-ico{ color:#fff; }
+}
+
+/* Backdrop when mobile menu is open */
+.nav-backdrop{
+  position: fixed; inset: 0; background: rgba(10,25,55,.35);
+  z-index: 15; backdrop-filter: blur(0.5px);
 }

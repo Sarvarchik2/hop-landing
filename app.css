@@ -18,3 +18,44 @@ body{
     overflow-x: hidden;
 
 }
+
+/* Animate on Scroll (AOS) utility classes */
+.aos{ 
+    opacity: 0; 
+    transform: translateY(18px); 
+    transition: transform 600ms cubic-bezier(.22,.61,.36,1), opacity 600ms ease; 
+    transition-delay: var(--aos-delay, 0ms);
+    will-change: transform, opacity; 
+}
+.aos.fade-left{ transform: translateX(24px); }
+.aos.fade-right{ transform: translateX(-24px); }
+.aos.zoom-in{ transform: scale(.96); }
+.aos.in-view{ opacity: 1; transform: none; }
+
+/* Intro overlay */
+.intro-overlay{
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #ffffff 0%, #e6efff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: introFade .5s ease 0.9s forwards;
+}
+.intro-logo{
+    width: clamp(140px, 22vw, 220px);
+    height: auto;
+    opacity: 0;
+    transform: scale(.9);
+    filter: drop-shadow(0 6px 20px rgba(44,104,223,.25));
+    animation: logoPop .7s cubic-bezier(.22,.61,.36,1) .1s forwards;
+}
+@keyframes logoPop{
+    0%{ opacity:0; transform: scale(.9); }
+    60%{ opacity:1; transform: scale(1.04); }
+    100%{ opacity:1; transform: scale(1); }
+}
+@keyframes introFade{
+    to{ opacity: 0; visibility: hidden; }
+}

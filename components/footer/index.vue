@@ -7,7 +7,7 @@
 
       <div class="footer-grid">
         <!-- Telegram -->
-        <div class="f-col f-telegram">
+  <div class="f-col f-telegram" v-aos>
           <div class="f-title">{{ t('footer.telegram.title') }}</div>
           <div class="f-tele-row">
             <span class="tg-icon" aria-hidden="true">
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Contacts -->
-        <div class="f-col">
+  <div class="f-col" v-aos :style="{'--aos-delay':'100ms'}">
           <div class="f-title">{{ t('footer.contacts.title') }}</div>
           <ul class="f-list">
             <li><a href="mailto:support@taxibot.uz">support@taxibot.uz</a></li>
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Documents -->
-        <div class="f-col">
+  <div class="f-col" v-aos :style="{'--aos-delay':'200ms'}">
           <div class="f-title">{{ t('footer.docs.title') }}</div>
           <ul class="f-list">
             <li><a href="#">{{ t('footer.docs.offer') }}</a></li>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- Badges -->
-        <div class="f-col f-badges">
+  <div class="f-col f-badges" v-aos :style="{'--aos-delay':'300ms'}">
           <a class="store-badge" href="#" aria-label="Google Play">
             <img src="@/assets/p.svg" alt="Get it on Google Play" />
           </a>
