@@ -5,4 +5,5 @@ node_modules
 .gitignore
 README.md
 dist
-package-lock.json
+# package-lock.json should NOT be ignored as it is needed for 'npm ci'
+# package-lock.json
