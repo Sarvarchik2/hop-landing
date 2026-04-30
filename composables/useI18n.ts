@@ -65,9 +65,10 @@ const messages: Record<Locale, Record<string, string>> = {
     'footer.telegram.handle': '@Hoptaxi',
     'footer.contacts.title': 'Kontaktlar',
     'footer.docs.title': 'Hujjatlar',
-    'footer.docs.offer': 'Ommaviy oferta',
+    'footer.docs.offer_drivers': 'Haydovchilar uchun ommaviy oferta',
+    'footer.docs.offer_passengers': "Yo'lovchilar uchun ommaviy oferta",
     'footer.docs.privacy': 'Maxfiylik siyosati',
-    'footer.docs.aml': 'AML/KYC diskleymeri',
+    'footer.docs.aml': 'AML/KYC poryadki',
   },
   ru: {
     'nav.about': 'О сервисе',
@@ -126,9 +127,10 @@ const messages: Record<Locale, Record<string, string>> = {
     'footer.telegram.handle': '@Hoptaxi',
     'footer.contacts.title': 'Контакты',
     'footer.docs.title': 'Документы',
-    'footer.docs.offer': 'Публичная оферта',
+    'footer.docs.offer_drivers': 'Публичная оферта для водителей',
+    'footer.docs.offer_passengers': 'Публичная оферта для пассажиров',
     'footer.docs.privacy': 'Политика конфиденциальности',
-    'footer.docs.aml': 'AML/KYC дисклеймер',
+    'footer.docs.aml': 'AML/KYC порядок',
   },
   en: {
     'nav.about': 'About',
@@ -187,9 +189,10 @@ const messages: Record<Locale, Record<string, string>> = {
     'footer.telegram.handle': '@Hoptaxi',
     'footer.contacts.title': 'Contacts',
     'footer.docs.title': 'Documents',
-    'footer.docs.offer': 'Public offer',
+    'footer.docs.offer_drivers': 'Public offer for drivers',
+    'footer.docs.offer_passengers': 'Public offer for passengers',
     'footer.docs.privacy': 'Privacy policy',
-    'footer.docs.aml': 'AML/KYC disclaimer',
+    'footer.docs.aml': 'AML/KYC policy',
   }
 }
 
@@ -207,7 +210,13 @@ function detectInitialLocale(): Locale {
   return DEFAULT_LOCALE
 }
 
-const _locale = ref<Locale>(detectInitialLocale())
+// Always start with DEFAULT_LOCALE to match SSR, then update on client after hydration
+const _locale = ref<Locale>(DEFAULT_LOCALE)
+if (typeof window !== 'undefined') {
+  setTimeout(() => {
+    _locale.value = detectInitialLocale()
+  }, 0)
+}
 
 export function useI18n(){
   const locale = _locale

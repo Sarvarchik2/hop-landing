@@ -33,10 +33,20 @@
         <!-- Documents -->
   <div class="f-col" v-aos :style="{'--aos-delay':'200ms'}">
           <div class="f-title">{{ t('footer.docs.title') }}</div>
-          <ul class="f-list">
-            <li><a href="#">{{ t('footer.docs.offer') }}</a></li>
-            <li><a href="#">{{ t('footer.docs.privacy') }}</a></li>
-            <li><a href="#">{{ t('footer.docs.aml') }}</a></li>
+          <ul class="f-list f-docs-list">
+            <li v-for="doc in docs" :key="doc.file">
+              <a :href="doc.file" :download="doc.filename" target="_blank" class="doc-link">
+                <svg class="doc-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="doc-label">{{ doc.label }}</span>
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 15V3m0 12-4-4m4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -55,8 +65,16 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from '@/composables/useI18n'
 const { t } = useI18n()
+
+const docs = computed(() => [
+  { file: '/documents/offer-drivers.docx', filename: 'offer-drivers.docx', label: t('footer.docs.offer_drivers') },
+  { file: '/documents/offer-passengers.docx', filename: 'offer-passengers.docx', label: t('footer.docs.offer_passengers') },
+  { file: '/documents/privacy-policy.docx', filename: 'privacy-policy.docx', label: t('footer.docs.privacy') },
+  { file: '/documents/kyc-aml.docx', filename: 'kyc-aml.docx', label: t('footer.docs.aml') },
+])
 </script>
 
 <style>
